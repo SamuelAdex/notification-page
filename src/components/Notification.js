@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
-import imgPic from '../assets/images/avatar-mark-webber.webp';
+
 
 const Notification = ({notify}) => {
     const [hasMessage, setHasMessage] = useState(false);
