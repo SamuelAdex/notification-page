@@ -1,14 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 
 const Header = () => {
+    const [isRead, setIsRead] = useState(false);
+
+    const handleIsRead = ()=>{
+        setIsRead(!isRead);
+    }
   return (
     <Div>
         <div className="alert-wrapper">
             <h3>Notification</h3>
             <p className="badge">3</p>
         </div>
-        <p className="as-read">Mark all as read</p>
+        <p className="as-read" onClick={handleIsRead}>Mark all as {isRead ? "unread" : "read"}</p>
     </Div>
   )
 }
