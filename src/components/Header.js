@@ -1,17 +1,23 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-const Header = () => {
+const Header = ({count, setCount}) => {
     const [isRead, setIsRead] = useState(false);
 
     const handleIsRead = ()=>{
-        setIsRead(!isRead);
+        if(isRead === false){
+            setIsRead(!isRead);
+            setCount(0)
+        }else{
+            setIsRead(!isRead);
+            setCount(3)
+        }
     }
   return (
     <Div>
         <div className="alert-wrapper">
             <h3>Notification</h3>
-            <p className="badge">3</p>
+            <p className="badge">{count}</p>
         </div>
         <p className="as-read" onClick={handleIsRead}>Mark all as {isRead ? "unread" : "read"}</p>
     </Div>

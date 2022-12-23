@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import styled from 'styled-components';
 import Notifications from './components/Notifications';
 import Header from './components/Header'
@@ -11,6 +12,7 @@ import anna from './assets/images/avatar-anna-kim.webp';
 import pic from './assets/images/image-chess.webp'
 
 function App() {
+  const [count, setCount] = useState(5);
   const data = [
     {
       id: 1,
@@ -100,7 +102,7 @@ function App() {
   return (
     <Div>
       <div className="container">
-        <Header /> 
+        <Header count={count} setCount={setCount} /> 
         <Notifications data={data} />  
       </div>
     </Div>
